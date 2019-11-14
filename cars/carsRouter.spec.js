@@ -91,3 +91,23 @@ describe('get', function () {
         })
     })
 })
+
+
+
+
+describe('get', function () {
+    describe('post /', function () {
+        it('should return json formated response', function () {
+
+            return request(server)  
+                .post('/cars')    
+                .then(res => {
+
+                    expect(res.type).toMatch(/json/i); 
+                })
+        })
+    })
+})
+
+
+
