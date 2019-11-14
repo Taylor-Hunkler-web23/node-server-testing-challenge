@@ -4,7 +4,7 @@ const server = require('./server.js') //bring in server
 
 //same steps as doing manually
 describe('server', function () {
-    describe('GET /', function () {
+    describe('/', function () {
         it('should return 200 OK', function () {
 
             return request(server) 
