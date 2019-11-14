@@ -1,6 +1,7 @@
 const db = require('../data/dbConfig.js');
 
 const { insert} = require('./cars-model.js');
+const { remove} = require('./cars-model.js');
 
 
  describe('cars model', function(){
@@ -39,4 +40,36 @@ const { insert} = require('./cars-model.js');
         })
     
     })
+
+
+
+    describe('remove()', function(){
+
+        beforeEach(async () => {
+            await db('cars').truncate();
+
+        })
+
+
+    it('should remove a car', async function() {
+
+        const [id] = await insert({name: 'camaro'})
+            
+      
+    const cars = await db ("cars");
+
+    expect(cars).toHaveLength(1)
+
+    await remove(id)
+
+   const newcars = await db("cars")
+
+    expect(newcars).toHaveLength(0)
+
+
+    });
+
+
+
+})
  })
