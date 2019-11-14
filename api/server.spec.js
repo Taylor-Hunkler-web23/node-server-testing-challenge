@@ -17,3 +17,13 @@ describe('server', function () {
     })
 })
 
+it('should return an api property with the value up inside the body', async () => {
+
+    const res = await request (server).get('/') 
+      
+
+            expect(res.body).toEqual({api: "server running"}); 
+         
+        
+})
+
