@@ -77,3 +77,17 @@ describe('add()', function () {
 
 
 })
+
+describe('get', function () {
+    describe('GET /', function () {
+        it('should return json formated response', function () {
+
+            return request(server)  
+                .get('/')    
+                .then(res => {
+
+                    expect(res.type).toMatch(/json/i); 
+                })
+        })
+    })
+})
