@@ -50,3 +50,30 @@ describe('remove()', function () {
 
 
 })
+
+
+
+describe('add()', function () {
+
+
+
+
+    it('should respond with status 200', async function () {
+
+   
+
+        await request(server)
+            .post("/cars")
+            .send({ name: "Jeep"})
+            .then(res => {
+                expect(res.status).toBe(201)
+            })
+
+
+
+
+    });
+
+
+
+})
