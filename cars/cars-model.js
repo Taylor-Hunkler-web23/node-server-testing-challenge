@@ -1,16 +1,16 @@
 const db = require('../data/dbConfig.js')
 
 module.exports ={
-
-
-
+get,
+insert,
+remove,
 }
 
 function get() {
     return db("cars")
 }
 
-function add(car){
+function insert(car){
     return db("cars")
     .insert(car, "id");
 }
